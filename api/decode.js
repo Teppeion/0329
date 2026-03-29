@@ -96,7 +96,7 @@ Brief内容如下：
 ${content}`
           }
         ],
-        max_tokens: 10000,
+        max_tokens: 8192,
         temperature: 0.85
       })
     });
