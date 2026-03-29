@@ -16,13 +16,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#e8eaf6;min-height:10
 .b4{width:180px;height:180px;background:radial-gradient(circle,#e8d4f8,#d0b8f0);bottom:18%;right:12%;animation:fl 9s ease-in-out infinite reverse}
 .b5{width:140px;height:140px;background:radial-gradient(circle,#fef0c0,#fde090);top:58%;left:38%;animation:fl 10s ease-in-out infinite}
 @keyframes fl{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-26px) scale(1.04)}}
-@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes sh{0%{background-position:200% center}100%{background-position:-200% center}}
 .glass{background:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.55);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 6px 40px rgba(26,95,248,0.08)}
-#page-up{position:relative;z-index:1;min-height:100vh;padding:80px 24px 60px;display:flex;flex-direction:column;align-items:center;gap:18px}
-#page-res{display:none;position:relative;z-index:1;min-height:100vh;flex-direction:column}
-#topbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;background:rgba(232,234,246,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.5)}
+
+/* ── TOPBAR ── */
+#topbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;background:rgba(232,234,246,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.5)}
 .logo{font-size:15px;font-weight:700;color:#1a1f3a}.logo span{color:#1a5ff8}
 .right{display:flex;align-items:center;gap:10px}
 #back{display:none;font-size:12px;font-weight:600;padding:4px 12px;border-radius:8px;border:1px solid rgba(26,31,58,0.15);background:rgba(255,255,255,0.4);color:rgba(26,31,58,0.6);cursor:pointer}
@@ -31,6 +31,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#e8eaf6;min-height:10
 .pill.work{border-color:rgba(26,95,248,0.4);color:#1a5ff8;animation:blink 1.4s infinite}
 .pill.done{border-color:rgba(34,160,96,0.4);color:#22a060}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.5}}
+
+/* ── UPLOAD PAGE ── */
+#page-up{position:relative;z-index:1;min-height:100vh;padding:80px 24px 60px;display:flex;flex-direction:column;align-items:center;gap:18px}
 #ucard{width:100%;max-width:680px;border-radius:26px;padding:48px 44px 40px;display:flex;flex-direction:column;align-items:center}
 .hero{font-size:clamp(44px,7vw,70px);font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:32px;text-align:center}
 .hero .dk{color:#1a1f3a}.hero .bl{color:#1a5ff8}
@@ -42,7 +45,9 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#e8eaf6;min-height:10
 .dsub{font-size:12px;color:rgba(26,31,58,0.45)}
 #fi{display:none}
 #fbadge{display:none;width:100%;border-radius:14px;background:rgba(26,95,248,0.07);border:1px solid rgba(26,95,248,0.15);padding:14px 18px;align-items:center;gap:12px}
-.fic{font-size:26px}.finf{flex:1}.fnm{font-size:13px;font-weight:600;color:#1a1f3a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:380px}.fmeta{font-size:11px;color:rgba(26,31,58,0.45);margin-top:2px}
+.fic{font-size:26px}.finf{flex:1}
+.fnm{font-size:13px;font-weight:600;color:#1a1f3a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:380px}
+.fmeta{font-size:11px;color:rgba(26,31,58,0.45);margin-top:2px}
 .frm{width:28px;height:28px;border-radius:50%;border:none;cursor:pointer;background:rgba(26,31,58,0.07);font-size:13px;color:rgba(26,31,58,0.4);display:flex;align-items:center;justify-content:center;transition:all 0.18s;flex-shrink:0}
 .frm:hover{background:rgba(220,60,60,0.1);color:#cc3333}
 #goBtn{margin-top:14px;width:100%;background:linear-gradient(135deg,#1a5ff8,#4a8aff);border:none;border-radius:14px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;padding:15px;cursor:pointer;transition:all 0.22s;box-shadow:0 5px 24px rgba(26,95,248,0.28)}
@@ -58,8 +63,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#e8eaf6;min-height:10
 .drow:nth-last-child(-n+2){border-bottom:none}
 .dnum{width:30px;height:30px;border-radius:50%;background:rgba(26,95,248,0.1);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1a5ff8}
 .dname{font-size:13px;font-weight:500;color:#1a1f3a}
+
+/* ── RESULT PAGE ── */
+#page-res{display:none;position:relative;z-index:1;min-height:100vh;flex-direction:column}
 #prog{position:fixed;top:63px;left:0;right:0;height:3px;background:rgba(26,95,248,0.08);z-index:99;display:none}
 #pf{height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,#1a5ff8,#a8d4f5,#1a5ff8);background-size:200% 100%;transition:width 0.5s;animation:sh 2s linear infinite}
+
+/* steps nav */
 #snav{position:sticky;top:63px;z-index:90;background:rgba(232,234,246,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.5);padding:9px 24px;display:flex;gap:5px;overflow-x:auto;flex-shrink:0;scrollbar-width:none}
 #snav::-webkit-scrollbar{display:none}
 .sp{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;border:1px solid transparent;cursor:default;opacity:0.3;transition:all 0.18s;white-space:nowrap;flex-shrink:0}
@@ -70,22 +80,71 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#e8eaf6;min-height:10
 .sp.act .snum{background:#1a5ff8;color:#fff}
 .snm{font-size:12px;font-weight:500;color:rgba(26,31,58,0.6)}
 .sp.act .snm{color:#1a5ff8;font-weight:700}
-#carea{flex:1;overflow-y:auto;padding:40px 24px 60px;display:flex;justify-content:center}
+
+/* content area */
+#carea{flex:1;overflow-y:auto;padding:32px 28px 60px}
 #carea::-webkit-scrollbar{width:4px}
 #carea::-webkit-scrollbar-thumb{background:rgba(26,95,248,0.18);border-radius:99px}
-#ccard{width:100%;max-width:720px;border-radius:26px;padding:48px 52px;min-height:300px}
-.cc{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:240px;gap:16px}
+
+.cc{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:16px;border-radius:26px;padding:48px}
 .spinner{width:34px;height:34px;border-radius:50%;border:2.5px solid rgba(26,95,248,0.15);border-top-color:#1a5ff8;animation:spin 0.75s linear infinite}
 .clb{font-size:12px;color:rgba(26,31,58,0.45)}
-.cerr{font-size:13px;color:#cc3333}
+.cerr-t{font-size:13px;color:#cc3333}
 .cedt{font-size:12px;color:rgba(204,51,51,0.65);text-align:center;max-width:400px;line-height:1.7}
-#res{display:none}
-.reb{font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(26,95,248,0.4);margin-bottom:8px}
-.rtl{font-size:28px;font-weight:800;color:#1a1f3a;margin-bottom:24px;letter-spacing:-0.5px;line-height:1.15}
-.rbd{font-size:14px;line-height:2;color:rgba(26,31,58,0.62)}
-.rbd p{margin-bottom:16px}
-.rbd p:last-child{margin-bottom:0}
-.qdeco{display:block;font-size:88px;line-height:0.8;color:rgba(26,95,248,0.05);font-family:Georgia,serif;font-weight:700;margin-bottom:-14px}
+
+/* ── BENTO RESULT ── */
+#res{display:none;max-width:1100px;margin:0 auto;animation:fu 0.4s ease}
+
+.dim-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;color:rgba(26,95,248,0.45);margin-bottom:8px}
+.dim-title{font-size:30px;font-weight:800;color:#1a1f3a;letter-spacing:-0.5px;margin-bottom:24px}
+
+/* bento grid */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+/* card base */
+.bc{border-radius:20px;padding:24px 26px;display:flex;flex-direction:column;gap:0;position:relative;overflow:hidden}
+
+/* color themes for cards */
+.bc-white{background:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.85);backdrop-filter:blur(16px)}
+.bc-blue{background:rgba(26,95,248,0.08);border:1px solid rgba(26,95,248,0.15);backdrop-filter:blur(16px)}
+.bc-lavender{background:rgba(200,185,255,0.2);border:1px solid rgba(200,185,255,0.35);backdrop-filter:blur(16px)}
+.bc-mint{background:rgba(180,240,200,0.2);border:1px solid rgba(180,240,200,0.35);backdrop-filter:blur(16px)}
+.bc-peach{background:rgba(255,210,185,0.25);border:1px solid rgba(255,210,185,0.4);backdrop-filter:blur(16px)}
+.bc-dark{background:rgba(26,31,58,0.85);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(16px)}
+
+/* span helpers */
+.col-span-2{grid-column:span 2}
+.col-span-3{grid-column:span 3}
+
+/* card label */
+.bc-label{font-size:9px;font-weight:700;letter-spacing:2px;color:#1a5ff8;margin-bottom:10px;text-transform:uppercase}
+.bc-dark .bc-label{color:rgba(180,200,255,0.7)}
+
+/* card text */
+.bc-text{font-size:13px;line-height:1.85;color:rgba(26,31,58,0.7);flex:1}
+.bc-dark .bc-text{color:rgba(255,255,255,0.75)}
+.bc-text p{margin-bottom:10px}
+.bc-text p:last-child{margin-bottom:0}
+
+/* highlight number/quote */
+.bc-big{font-size:38px;font-weight:800;color:#1a5ff8;line-height:1;margin-bottom:8px;letter-spacing:-1px}
+.bc-dark .bc-big{color:#a8c4ff}
+
+/* tag chips */
+.bc-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.bc-chip{font-size:11px;font-weight:600;padding:4px 12px;border-radius:99px;background:rgba(26,95,248,0.1);color:#1a5ff8;border:1px solid rgba(26,95,248,0.15)}
+.bc-dark .bc-chip{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.15)}
+
+/* idea cards */
+.idea-num{font-size:11px;font-weight:700;letter-spacing:1px;color:rgba(26,95,248,0.5);margin-bottom:6px}
+.idea-name-big{font-size:17px;font-weight:800;color:#1a1f3a;margin-bottom:14px;line-height:1.3}
+.idea-section{margin-bottom:12px}
+.idea-section:last-child{margin-bottom:0}
+.idea-section-label{font-size:9px;font-weight:700;letter-spacing:2px;color:rgba(26,95,248,0.45);margin-bottom:5px}
+.idea-section-text{font-size:13px;line-height:1.8;color:rgba(26,31,58,0.7)}
+
+/* divider line */
+.bc-divider{height:1px;background:rgba(26,31,58,0.07);margin:14px 0}
 </style>
 </head>
 <body>
@@ -104,6 +163,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#e8eaf6;min-height:10
 </div>
 <div id="prog"><div id="pf"></div></div>
 
+<!-- UPLOAD PAGE -->
 <div id="page-up">
   <div id="ucard" class="glass">
     <div class="hero"><span class="dk">BRIEF</span><span class="bl">DECODER</span></div>
@@ -130,19 +190,13 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#e8eaf6;min-height:10
   </div>
 </div>
 
+<!-- RESULT PAGE -->
 <div id="page-res">
   <div id="snav"></div>
   <div id="carea">
-    <div id="ccard" class="glass">
-      <div class="cc" id="cload" style="display:none"><div class="spinner"></div><div class="clb">正在解码 Brief，请稍候…</div></div>
-      <div class="cc" id="cerr" style="display:none"><div class="cerr">⚠ 解码失败</div><div class="cedt" id="cedt"></div></div>
-      <div id="res">
-        <span class="qdeco">"</span>
-        <div class="reb" id="reb"></div>
-        <div class="rtl" id="rtl"></div>
-        <div class="rbd" id="rbd"></div>
-      </div>
-    </div>
+    <div class="cc glass" id="cload" style="display:none"><div class="spinner"></div><div class="clb">正在解码 Brief，请稍候…</div></div>
+    <div class="cc glass" id="cerr" style="display:none"><div class="cerr-t">⚠ 解码失败</div><div class="cedt" id="cedt"></div></div>
+    <div id="res"></div>
   </div>
 </div>
 
@@ -162,8 +216,16 @@ const STEPS=[
   {id:"12",key:"ideas",zh:"初步创意想法"},
 ];
 
+// Card color themes cycling
+const THEMES = ['bc-white','bc-blue','bc-lavender','bc-mint','bc-peach'];
+let themeIdx = 0;
+function nextTheme(){ return THEMES[themeIdx++ % THEMES.length]; }
+
+// Build dims grid
 const dg=document.getElementById('dgrid');
 STEPS.forEach(s=>{const el=document.createElement('div');el.className='drow';el.innerHTML=`<div class="dnum">${s.id}</div><div class="dname">${s.zh}</div>`;dg.appendChild(el)});
+
+// Build steps nav
 const sn=document.getElementById('snav');
 STEPS.forEach(s=>{const el=document.createElement('div');el.className='sp';el.id='sp-'+s.key;el.innerHTML=`<div class="snum">${s.id}</div><div class="snm">${s.zh}</div>`;sn.appendChild(el)});
 
@@ -195,11 +257,8 @@ async function handleFile(file){
   drop.style.display='none';
   document.getElementById('fbadge').style.display='flex';
   goBtn.disabled=false;
-
   if(isPDF){
-    const reader=new FileReader();
-    reader.onload=()=>{fileData={type:'pdf_b64',content:reader.result.split(',')[1]}};
-    reader.readAsDataURL(file);
+    fileData={type:'text',content:'[PDF文件，请根据上下文分析]'};
   } else if(isDOCX){
     try{const buf=await file.arrayBuffer();const r=await mammoth.extractRawText({arrayBuffer:buf});fileData={type:'text',content:r.value}}
     catch(e){fileData={type:'text',content:'[无法解析Word文件]'}}
@@ -217,26 +276,106 @@ function goUp(){
   document.querySelectorAll('.sp').forEach(e=>e.classList.remove('on','act'));
 }
 
-function setCard(v){
+function setView(v){
   document.getElementById('cload').style.display=v==='load'?'flex':'none';
   document.getElementById('cerr').style.display=v==='err'?'flex':'none';
   document.getElementById('res').style.display=v==='res'?'block':'none';
 }
 
+function makeCard(label, text, colSpan, theme, opts){
+  opts = opts||{};
+  const div = document.createElement('div');
+  div.className = `bc ${theme||nextTheme()}${colSpan?' col-span-'+colSpan:''}`;
+  const paras = String(text).split(/\n+/).filter(p=>p.trim()).map(p=>`<p>${p}</p>`).join('');
+  let inner = `<div class="bc-label">${label}</div>`;
+  if(opts.big) inner += `<div class="bc-big">${opts.big}</div>`;
+  inner += `<div class="bc-text">${paras}</div>`;
+  if(opts.chips && opts.chips.length){
+    inner += `<div class="bc-chips">${opts.chips.map(c=>`<span class="bc-chip">${c}</span>`).join('')}</div>`;
+  }
+  div.innerHTML = inner;
+  return div;
+}
+
+function renderDim(key, data){
+  const s = STEPS.find(x=>x.key===key);
+  const res = document.getElementById('res');
+  res.innerHTML = '';
+  themeIdx = 0;
+
+  // Header
+  const hdr = document.createElement('div');
+  hdr.style.marginBottom = '20px';
+  hdr.innerHTML = `<div class="dim-eyebrow">DIMENSION ${s.id} / 12</div><div class="dim-title">${s.zh}</div>`;
+  res.appendChild(hdr);
+
+  const bento = document.createElement('div');
+  bento.className = 'bento';
+
+  if(key === 'bluekey'){
+    // Blue Key: keyword as chips + one-liner as dark card
+    const kwData = data['此brief的关键词'] || '';
+    const oneliner = data['一句话重点'] || '';
+    // Parse keywords from text
+    const kwCard = makeCard('策略关键词', kwData, 2, 'bc-blue');
+    bento.appendChild(kwCard);
+    const olCard = document.createElement('div');
+    olCard.className = 'bc bc-dark';
+    olCard.innerHTML = `<div class="bc-label">一句话重点</div><div class="bc-big" style="font-size:20px;line-height:1.4;margin-top:8px">${oneliner}</div>`;
+    bento.appendChild(olCard);
+
+  } else if(key === 'enhanced'){
+    const text = data['重新梳理补充Brief'] || '';
+    const card = makeCard('增强版 Brief', text, 3, 'bc-white');
+    bento.appendChild(card);
+
+  } else if(key === 'ideas'){
+    ['方向一','方向二','方向三'].forEach((dir, i) => {
+      const d = data[dir];
+      if(!d) return;
+      const themes = ['bc-lavender','bc-mint','bc-peach'];
+      const card = document.createElement('div');
+      card.className = `bc ${themes[i]}`;
+      card.innerHTML = `
+        <div class="idea-num">方向 0${i+1}</div>
+        <div class="idea-name-big">${d['名称']||dir}</div>
+        <div class="bc-divider"></div>
+        <div class="idea-section">
+          <div class="idea-section-label">INSIGHT · 洞察</div>
+          <div class="idea-section-text">${d['洞察']||''}</div>
+        </div>
+        <div class="bc-divider"></div>
+        <div class="idea-section">
+          <div class="idea-section-label">CREATIVE · 核心创意</div>
+          <div class="idea-section-text">${d['核心创意']||''}</div>
+        </div>`;
+      bento.appendChild(card);
+    });
+
+  } else {
+    // Generic: each sub-module as a card
+    const entries = Object.entries(data);
+    entries.forEach(([label, text], i) => {
+      // First card spans 2 cols, rest are 1
+      const span = (entries.length > 1 && i === 0) ? 2 : null;
+      const card = makeCard(label, text, span);
+      bento.appendChild(card);
+    });
+  }
+
+  res.appendChild(bento);
+  setView('res');
+  res.style.animation='none';void res.offsetWidth;res.style.animation='fu 0.4s ease';
+  document.getElementById('carea').scrollTop=0;
+}
+
 function showStep(key){
   if(!results)return;
-  const s=STEPS.find(x=>x.key===key);
   document.querySelectorAll('.sp').forEach(e=>e.classList.remove('act'));
   const el=document.getElementById('sp-'+key);
   el.classList.add('act');
   el.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-  document.getElementById('reb').textContent='DIMENSION '+s.id+' / 12';
-  document.getElementById('rtl').textContent=s.zh;
-  const paras=(results[key]||'').split(/\n+/).filter(p=>p.trim());
-  document.getElementById('rbd').innerHTML=paras.map(p=>`<p>${p}</p>`).join('');
-  const r=document.getElementById('res');r.style.animation='none';void r.offsetWidth;r.style.animation='fu 0.35s ease';
-  setCard('res');
-  document.getElementById('carea').scrollTop=0;
+  renderDim(key, results[key]);
 }
 
 goBtn.addEventListener('click',async()=>{
@@ -245,28 +384,19 @@ goBtn.addEventListener('click',async()=>{
   const rp=document.getElementById('page-res');rp.style.display='flex';rp.style.flexDirection='column';
   back.style.display='block';
   document.querySelectorAll('.sp').forEach(e=>e.classList.remove('on','act'));
-  setCard('load');
+  setView('load');
   goBtn.disabled=true;pill.textContent='Analyzing';pill.className='pill work';
   prog.style.display='block';pf.style.width='80%';
-
-  // Extract text content to send to our API
-  let textContent='';
-  if(fileData.type==='text'){
-    textContent=fileData.content;
-  } else {
-    textContent='[PDF文件内容，请根据文件名和上下文进行分析]';
-  }
 
   try{
     const resp=await fetch('/api/decode',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({content:textContent})
+      body:JSON.stringify({content:fileData.content})
     });
     const data=await resp.json();
     if(!resp.ok||data.error)throw new Error(data.error||'解码失败');
     results=data.result;
-
     pf.style.width='100%';
     setTimeout(()=>{prog.style.display='none';pf.style.width='0%'},500);
     pill.textContent='✓ Complete';pill.className='pill done';
@@ -279,7 +409,7 @@ goBtn.addEventListener('click',async()=>{
   }catch(e){
     prog.style.display='none';pill.textContent='Error';pill.className='pill';
     document.getElementById('cedt').textContent=e.message;
-    setCard('err');
+    setView('err');
   }finally{
     goBtn.disabled=false;goBtn.textContent='✦ 开始解码';
   }
